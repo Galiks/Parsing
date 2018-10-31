@@ -15,59 +15,74 @@ namespace Parsing
         private static List<int> pages = new List<int>();
         //private static List<string> pagesOnSite = new List<string>();
         private int? maxPage;
+        HtmlWeb webGet;
 
         public int? MaxPage { get => maxPage; set => maxPage = value; }
         public static List<string> Names { get => names; set => names = value; }
         public static List<string> Discount { get => discount; set => discount = value; }
         public static List<int> Pages { get => pages; set => pages = value; }
+        public HtmlWeb WebGet { get => webGet; set => webGet = value; }
+
         //public static List<string> PagesOnSite { get => pagesOnSite; set => pagesOnSite = value; }
+
+        public SiteParsing()
+        {
+            WebGet = new HtmlWeb();
+        }
 
         public void MainMethod()
         {
-
-            
-            var webGet = new HtmlWeb();
             MaxPage = MaxPageOnSite(webGet);
 
             //for (int i = 1; i < MaxPage; i++)
             //{
 
-                //var url = $"https://letyshops.com/shops?page={i}";
+            //var url = $"https://letyshops.com/shops?page={i}";
 
-                if (webGet.Load($"https://letyshops.com/shops?page=1") is HtmlDocument document)
-                {
-                    var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
+            if (WebGet.Load($"https://letyshops.com/shops?page=2") is HtmlDocument document)
+            {
+                var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
+                //ListOfNames(nodes);
 
-                    foreach (var item in nodes)
-                    {
-                        foreach (var item2 in item.CssSelect("div.b-teaser__title"))
-                        {
-                            Names.Add(item2.InnerText.CleanInnerText());
-                        }
-                    }
-                    foreach(var item in nodes)
-                    { 
-                        foreach (var item2 in item.CssSelect("span.b-shop-teaser__cash"))
-                        {
-                            Discount.Add(item2.InnerText.CleanInnerText());
-                        }
-                    }
+                ListOfDiscount(nodes);
 
-                    Console.WriteLine($"{Names.Count} : {Discount.Count}");
-
-                    for (int j = 0; j <= Names.Count; j++)
-                    {
-                        Console.WriteLine($"{Names[j]} : {Discount[j]}");
-                    }
-                } 
+                
+            }
             //}
         }
 
-        private static int? MaxPageOnSite(HtmlWeb webGet)
+        private static void ListOfDiscount(IEnumerable<HtmlNode> nodes)
+        {
+            foreach (var node in nodes)
+            {
+                foreach (var cashValues in node.SelectNodes("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']//span[@class='b-shop-teaser__cash']|//span[@class='b-shop-teaser__new-cash']"))
+                {
+                    Console.WriteLine(cashValues.InnerText);                   
+                }
+            }
+        }
+
+        private static void ListOfNames(IEnumerable<HtmlNode> nodes)
+        {
+            foreach (var item in nodes)
+            {
+                foreach (var item2 in item.CssSelect("div.b-teaser__title"))
+                {
+                    Names.Add(item2.InnerText.CleanInnerText());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Метод для подсчёта страниц на сайте
+        /// </summary>
+        /// <param name="WebGet">Переменная для подключения</param>
+        /// <returns></returns>
+        private static int? MaxPageOnSite(HtmlWeb WebGet)
         {
             var url = "https://letyshops.com/shops?page=1";
 
-            if (webGet.Load(url) is HtmlDocument document)
+            if (WebGet.Load(url) is HtmlDocument document)
             {
                 var maxPage = document.DocumentNode.CssSelect("ul.b-pagination").CssSelect("li.b-pagination__item").CssSelect("a.b-pagination__link");
 
@@ -85,6 +100,29 @@ namespace Parsing
 
             return null;
         }
+
+        //private string ReturnCash(string cash)
+        //{
+        //    if (!String.IsNullOrEmpty(cash))
+        //    {
+        //        return cash;
+        //    }
+        //    else
+        //    {
+        //        if (WebGet.Load($"https://letyshops.com/shops?page=1") is HtmlDocument document)
+        //        {
+        //            var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
+
+        //            foreach (var item in nodes)
+        //            {
+        //                foreach (var item2 in item.CssSelect("span.b-shop-teaser__new-cash"))
+        //                {
+        //                    Discount.Add(ReturnCash(item2.InnerText.CleanInnerText()));
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
    
