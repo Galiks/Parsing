@@ -42,10 +42,16 @@ namespace Parsing
             if (WebGet.Load($"https://letyshops.com/shops?page=2") is HtmlDocument document)
             {
                 var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
+
                 //ListOfNames(nodes);
 
                 ListOfDiscount(nodes);
 
+
+                //for (int i = 0; i < Names.Count; i++)
+                //{
+                //    Console.WriteLine($"{Names[i]} : {Discount[i]} %");
+                //}
                 
             }
             //}
@@ -55,9 +61,10 @@ namespace Parsing
         {
             foreach (var node in nodes)
             {
-                foreach (var cashValues in node.SelectNodes("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']//span[@class='b-shop-teaser__cash']|//span[@class='b-shop-teaser__new-cash']"))
+                // /html/body/div//*/div[@class='b-shop-teaser__cash-value-row']//span[@class='b-shop-teaser__cash']|//span[@class='b-shop-teaser__new-cash']
+                foreach (var cashValues in node.SelectNodes("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']"))
                 {
-                    Console.WriteLine(cashValues.InnerText);                   
+                    Console.WriteLine(cashValues.InnerText.CleanInnerText());                   
                 }
             }
         }
