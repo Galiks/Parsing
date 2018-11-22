@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using Entity;
+using HtmlAgilityPack;
 using ScrapySharp.Extensions;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,16 @@ namespace Parsing
         private static List<string> names = new List<string>();
         private static List<string> discount = new List<string>();
         private static List<int> pages = new List<int>();
-        //private static List<string> pagesOnSite = new List<string>();
         private int? maxPage;
         HtmlWeb webGet;
+        private static List<LetyShops> letyShops = new List<LetyShops>();
 
         public int? MaxPage { get => maxPage; set => maxPage = value; }
         public static List<string> Names { get => names; set => names = value; }
         public static List<string> Discount { get => discount; set => discount = value; }
         public static List<int> Pages { get => pages; set => pages = value; }
         public HtmlWeb WebGet { get => webGet; set => webGet = value; }
-
-        //public static List<string> PagesOnSite { get => pagesOnSite; set => pagesOnSite = value; }
+        public static List<LetyShops> LetyShops { get => letyShops; set => letyShops = value; }
 
         public SiteParsing()
         {
@@ -32,28 +32,33 @@ namespace Parsing
 
         public void MainMethod()
         {
+
             MaxPage = MaxPageOnSite(webGet);
 
-            //for (int i = 1; i < MaxPage; i++)
-            //{
-
-            //var url = $"https://letyshops.com/shops?page={i}";
-
-            if (WebGet.Load($"https://letyshops.com/shops?page=2") is HtmlDocument document)
+            for (int i = 1; i <= MaxPage; i++)
             {
-                var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
 
-                //ListOfNames(nodes);
+                var url = $"https://letyshops.com/shops?page={i}";
 
-                ListOfDiscount(nodes);
+                if (WebGet.Load(url) is HtmlDocument document)
+                {
+                    var nodes = document.DocumentNode.CssSelect("div.b-teaser-list");
 
+                    ListOfNames(nodes);
 
-                //for (int i = 0; i < Names.Count; i++)
-                //{
-                //    Console.WriteLine($"{Names[i]} : {Discount[i]} %");
-                //}
-                
+                    ListOfDiscount(nodes);
+
+                }
             }
+
+            //for (int j = 0; j < Names.Count; j++)
+            //{
+            //    LetyShops.Add(new LetyShops(Names[j],Discount[j],DateTime.Now));
+            //}
+
+            //foreach (var item in LetyShops)
+            //{
+            //    Console.WriteLine($"Имя: {item.Name}{Environment.NewLine}Кэш-бэк: {item.Discount}{Environment.NewLine}Дата: {item.Date_add}{Environment.NewLine}");
             //}
         }
 
@@ -64,7 +69,8 @@ namespace Parsing
                 // /html/body/div//*/div[@class='b-shop-teaser__cash-value-row']//span[@class='b-shop-teaser__cash']|//span[@class='b-shop-teaser__new-cash']
                 foreach (var cashValues in node.SelectNodes("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']"))
                 {
-                    Console.WriteLine(cashValues.InnerText.CleanInnerText());                   
+                    //Console.WriteLine(cashValues.InnerText.CleanInnerText());
+                    Discount.Add(cashValues.InnerText.CleanInnerText());
                 }
             }
         }

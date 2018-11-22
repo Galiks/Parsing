@@ -1,0 +1,23 @@
+﻿@using Entity
+
+@model List<LetyShops>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <table>
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Discount
+                </td>
+            </tr>
+        </table>
+    }
+</div>

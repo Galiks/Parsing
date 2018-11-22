@@ -1,0 +1,9 @@
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\bin\Debug\BLL.Interface.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\bin\Debug\BLL.Interface.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\bin\Debug\Ninject.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\bin\Debug\Ninject.xml
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\obj\Debug\BLL.Interface.csprojAssemblyReference.cache
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\obj\Debug\BLL.Interface.csproj.CopyComplete
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\obj\Debug\BLL.Interface.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\BLL.Interface\obj\Debug\BLL.Interface.pdb

@@ -27,3 +27,16 @@ e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\obj\Debug\Parsing.cspro
 e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\obj\Debug\Parsing.csproj.CopyComplete
 e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\obj\Debug\Parsing.exe
 e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\obj\Debug\Parsing.pdb
+E:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\Entity.dll
+E:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\Entity.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\BLL.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\BLL.Interface.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\Ninject.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\DAL.Interface.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\DAL.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\BLL.Interface.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\BLL.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\Ninject.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\Ninject.xml
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\DAL.Interface.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Parsing\bin\Debug\DAL.pdb

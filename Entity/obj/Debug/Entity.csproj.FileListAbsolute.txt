@@ -1,0 +1,9 @@
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\bin\Debug\Entity.dll
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\bin\Debug\Entity.pdb
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\obj\Debug\Entity.dll
+E:\Documents\Visual Studio 2017\Projects\Parsing\Entity\obj\Debug\Entity.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\Entity\bin\Debug\Ninject.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\Entity\bin\Debug\Ninject.xml
+e:\Documents\Visual Studio 2017\Projects\Parsing\Entity\obj\Debug\Entity.csproj.CopyComplete

@@ -1,0 +1,13 @@
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\DAL.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\DAL.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\DAL.Interface.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\Entity.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\Ninject.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\DAL.Interface.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\Entity.pdb
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\bin\Debug\Ninject.xml
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\obj\Debug\DAL.csproj.CopyComplete
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\obj\Debug\DAL.dll
+e:\Documents\Visual Studio 2017\Projects\Parsing\DAL\obj\Debug\DAL.pdb

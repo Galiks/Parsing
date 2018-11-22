@@ -1,21 +1,26 @@
-﻿using HtmlAgilityPack;
-using ScrapySharp.Extensions;
-using ScrapySharp.Network;
+﻿using BLL;
+using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Parsing
 {
     class Program
     {
+        private static ILetyShopsLogic letyShopsLogic;
+
+        public static ILetyShopsLogic LetyShopsLogic { get => letyShopsLogic; set => letyShopsLogic = value; }
+
         static void Main(string[] args)
         {
-            SiteParsing siteParsing = new SiteParsing();
+            //NinjectCommon.Registration();
 
-            siteParsing.MainMethod();
+            //LetyShopsLogic = NinjectCommon.Kernel.Get<ILetyShopsLogic>();
+
+            //letyShopsLogic.AddShop("LetyShops");
+
+            //SiteParsing siteParsing = new SiteParsing();
+
+            //siteParsing.MainMethod();
 
             Console.WriteLine("The end");
 
